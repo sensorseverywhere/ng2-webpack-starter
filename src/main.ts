@@ -6,5 +6,10 @@ import { enableProdMode } from '@angular/core';
 import { bootstrap } from '@angular/platform-browser-dynamic';
 import {AppComponent } from './components/app/app.component';
 
-enableProdMode();
+
+console.info(app.environment);
+if(app.environment === 'production') {
+    enableProdMode();    
+}
+
 bootstrap(AppComponent);
