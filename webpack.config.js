@@ -1,9 +1,6 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
-
-
 module.exports = {
 
   entry: './src/main.ts',
@@ -15,7 +12,8 @@ module.exports = {
     loaders: [
       {test: /\.ts$/, loader: 'ts'},
       {test: /\.html$/, loader: 'raw'},
-      {test: /\.css$/, loader: 'raw'}
+      {test: /\.css$/, loader: 'raw'},
+       {test: /\.scss$/, exclude:/node_modules/, loader:'raw-loader!sass-loader'}
     ]
   },
   resolve: {
